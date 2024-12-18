@@ -1,6 +1,6 @@
 # Carlos Alberto Gonzalez Sosa -  Sistemas operativos 
 
-## Actividades
+## Actividades - Profe por favor paseme
 
 ### Administración de Memoria
  #### 3.1 Política y filosofía
