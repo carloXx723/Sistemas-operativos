@@ -118,7 +118,7 @@ if __name__ == "__main__":
     main()
 
 ```
-![Captura de pantalla](ss2.png)
+![Captura de pantalla](imagenes/ss2.png)
 
  2. Diseña un algoritmo para calcular qué procesos pueden ser asignados
  a un sistema con memoria real limitada utilizando el algoritmo de
@@ -197,7 +197,7 @@ if __name__ == "__main__":
     main()
     
 ```
-![Captura de pantalla](ss1.png)
+![Captura de pantalla](imagenes/ss1.png)
 
 
  #### 3.3 Organización de memoria virtual
@@ -380,12 +380,12 @@ int main() {
 }
 
  ```
-![Captura de pantalla](ss3.png)
+![Captura de pantalla](imagenes/ss3.png)
 
  2. Diseña un diagrama que represente el proceso de traducción de direc
 ciones virtuales a físicas en un sistema con memoria virtual
 
-![Captura de pantalla](ss4.png)
+![Captura de pantalla](imagenes/ss4.png)
     
 
 #### Integración
@@ -437,7 +437,7 @@ ciones virtuales a físicas en un sistema con memoria virtual
     simularSwap()
 
     ```
-![Captura de pantalla](ss5.png)
+![Captura de pantalla](imagenes/ss5.png)
 
   ### Administración de Entrada/Salida
  #### 4.1 Dispositivos y manejadores de dispositivos
@@ -551,7 +551,7 @@ int main() {
 }
 
 ```
-![Captura de pantalla](ss6.png)
+![Captura de pantalla](imagenes/ss6.png)
 
  
  #### 4.2 Mecanismos y funciones de los manejadores de dispositivos
@@ -642,7 +642,7 @@ int main() {
 }
 
 ```
-![Captura de pantalla](ss7.png)
+![Captura de pantalla](imagenes/ss7.png)
 
  #### 4.3 Estructuras de datos para manejo de dispositivos
 
@@ -743,7 +743,7 @@ int main() {
 }
 
 ```
-![Captura de pantalla](ss8.png)
+![Captura de pantalla](imagenes/ss8.png)
 
  2. Escribe un programa que simule las operaciones de un manejador de
  dispositivos utilizando una tabla de estructuras.
@@ -867,12 +867,12 @@ int main() {
 }
 
 ```
-![Captura de pantalla](ss9.png)
+![Captura de pantalla](imagenes/ss9.png)
  #### 4.4 Operaciones de Entrada/Salida
 
  1. Diseña un flujo que describa el proceso de lectura de un archivo desde un disco magnético. Acompáñalo con un programa básico que simule
  el proceso.
-![Captura de pantalla](ss10.png)
+![Captura de pantalla](imagenes/ss10.png)
 
 ```c
 #include <stdio.h>
@@ -986,7 +986,7 @@ int main() {
 }
 
 ```
-![Captura de pantalla](ss11.png)
+![Captura de pantalla](imagenes/ss11.png)
 
  2. Implementa un programa en Python, C o java que realice operaciones
  de entrada/salida asíncronas usando archivos.
@@ -1054,7 +1054,7 @@ int main() {
 }
 
 ```
-![Captura de pantalla](ss12.png)
+![Captura de pantalla](imagenes/ss12.png)
 
 
  #### Integración
@@ -1141,7 +1141,7 @@ int main() {
 
 ```
 
-![Captura de pantalla](ss13.png)
+![Captura de pantalla](imagenes/ss13.png)
 
  2. Diseña un sistema que maneje múltiples dispositivos simulados (disco duro, impresora, teclado) y muestra cómo se realiza la comunicación entre ellos.
 
@@ -1221,7 +1221,7 @@ int main() {
 }
 
 ```
-![Captura de pantalla](ss14.png)
+![Captura de pantalla](imagenes/ss14.png)
 
  #### Avanzados
  1. Explica cómo los sistemas operativos modernos optimizan las opera
