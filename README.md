@@ -1463,5 +1463,146 @@ Mucho, ya que nos ayuda a podernos dar cuenta si tenemos algun dispositivo no de
 
 Se podrian aplicar en la administracion de los dispositivos, que es una parte fundamental de los sistemas, para brindar seguridad asegurandose de que no haya un dispositivo no deseado y con el registro de eventos nos podemos dar cuenta si algun dispositivo fallo ya sea por hardware o por un controlador 
 
-=======
->>>>>>> 0d6eb00c5d705307ed33ba05667cf6d8b351f975
+## Comandos de Entrada y Salida, Discos y Archivos
+
+### Ejercicio 1: Montar y Desmontar Discos
+
+### Instrucciones
+
+Inserta una memoria USB en el sistema.
+
+Encuentra el dispositivo usando el comando: `lsblk`
+
+![Captura de pantalla](imagenes/ss33.png)
+
+Monta la memoria USB en un directorio, por ejemplo, `/mnt/usb`:  `sudo mount /dev/sdX1 /mnt/usb`
+
+![Captura de pantalla](imagenes/ss34.png)
+
+
+Verifica que esté montado correctamente: `df -h`
+
+![Captura de pantalla](imagenes/ss35.png)
+
+Copia un archivo desde tu directorio personal al dispositivo USB: `      cp archivo.txt /mnt/usb/
+`
+
+![Captura de pantalla](imagenes/ss36.png)
+
+Desmonta la memoria USB: `sudo umount /mnt/usb`
+
+![Captura de pantalla](imagenes/ss37.png)
+
+### Ejercicio 2: Redirección de Entrada y Salida
+
+### Instrucciones
+
+Lista los archivos de tu directorio actual y guarda el resultado en un archivo `listado.txt`: `ls -l > listado.txt`
+
+![Captura de pantalla](imagenes/ss38.png)
+
+Muestra el contenido del archivo en la terminal: `cat listado.txt`
+
+![Captura de pantalla](imagenes/ss39.png)
+      
+Añade la fecha actual al final del archivo: `date >> listado.txt`
+
+ ![Captura de pantalla](imagenes/ss40.png)
+     
+Muestra todo el contenido del archivo nuevamente: `cat listado.txt`
+
+![Captura de pantalla](imagenes/ss41.png)
+
+
+### Ejercicio 3: Copiar y Mover Archivos
+
+### Instrucciones
+
+Crea un archivo de texto llamado `archivo1.txt`: `echo "Este es un archivo de prueba" > archivo1.txt
+`
+![Captura de pantalla](imagenes/ss42.png)
+
+Copia este archivo a otro directorio, por ejemplo, `/tmp`: `cp archivo1.txt /tmp/`
+
+![Captura de pantalla](imagenes/ss43.png)
+     
+Renombra el archivo copiado a `archivo2.txt` en `/tmp`: `mv /tmp/archivo1.txt /tmp/archivo2.txt`
+
+![Captura de pantalla](imagenes/ss44.png)
+     
+Mueve el archivo `archivo2.txt` de vuelta a tu directorio actual: `mv /tmp/archivo2.txt .`
+
+![Captura de pantalla](imagenes/ss45.png)
+
+### Ejercicio 4: Comprimir y Descomprimir Archivos
+
+### Instrucciones 
+
+Crea un directorio llamado `backup` y copia algunos archivos en él.
+
+![Captura de pantalla](imagenes/ss46.png)
+
+Comprime el directorio `backup` en un archivo `.tar.gz`: `tar -czvf backup.tar.gz backup/`
+
+![Captura de pantalla](imagenes/ss47.png)
+      
+Borra el directorio original y extrae el contenido del archivo comprimido: `tar -xzvf backup.tar.gz`
+
+![Captura de pantalla](imagenes/ss48.png)
+
+### Ejercicio 5: Permisos y Propiedades de Archivos
+###Instrucciones
+
+Crea un archivo llamado `privado.txt`: `touch privado.txt`
+
+![Captura de pantalla](imagenes/ss49.png)
+   
+Cambia los permisos del archivo para que solo el propietario pueda leer y escribir: `chmod 600 privado.txt`
+
+ ![Captura de pantalla](imagenes/ss50.png)
+     
+Cambia el propietario del archivo a otro usuario (si tienes privilegios): `sudo chown usuario privado.txt`
+
+![Captura de pantalla](imagenes/ss51.png)
+
+### Ejercicio 6: Exploración de Dispositivos
+
+Usa `lsblk` para listar los discos y particiones: `lsblk`
+
+![Captura de pantalla](imagenes/ss52.png)
+      
+Usa `du -sh` para ver el tamaño del contenido en un directorio de tu elección: `du -sh /ruta/directorio`
+
+![Captura de pantalla](imagenes/ss53.png)
+      
+Verifica el uso de disco con `df -h`: `df -h`
+
+![Captura de pantalla](imagenes/ss54.png)
+
+### Ejercicio 7: Crear y Formatear Particiones
+
+### Instrucciones 
+
+Identifica un disco no particionado: `sudo fdisk -l`
+
+![Captura de pantalla](imagenes/ss55.png)
+      
+Usa `fdisk` para crear una nueva partición: `sudo fdisk /dev/sdX`
+
+![Captura de pantalla](imagenes/ss57.png)
+      
+Formatea la partición como `ext4`: `sudo mkfs.ext4 /dev/sdX1`
+
+![Captura de pantalla](imagenes/ss58.png)
+
+Monta la partición en un directorio y prueba escribiendo archivos en ella: `sudo mount /dev/sdX1 /mnt/nueva_particion 
+echo "Prueba de escritura" > /mnt/nueva_particion/test.txt`
+
+![Captura de pantalla](imagenes/ss59.png)
+
+![Captura de pantalla](imagenes/ss60.png)
+
+      
+      
+
+       
