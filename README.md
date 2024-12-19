@@ -1228,3 +1228,240 @@ int main() {
 ciones de entrada/salida con el uso de memoria caché.
 
     Los sistemas operativos utlizan la memoria caché para mejorar el rendimiento y reducir latencias, esta tecnica consiste en almacenar temporalmente datos frecuentemente usados, en los discos lo funciona almacenando los datos traidos desde el disco para evitar que el disco vuelva a hacer toda la operacion de lectura, en la escritura primero escribe los datos en la cache y despues en el disco para mejorar la velocidad de escritura, utiliza un metodo llamado lectura anticipada para predecir que datos seran necesarios para la ejecucion de un proceso y los carga antes de que se soliciten, al combinar todas estas tecnicas reduce el numero de operaciones fisicas necesarias mejorando asi el rendimiento y desgaste inncesesario en los dispositivos de E/S. 
+<<<<<<< HEAD
+
+### Actividades: Dispositivos de entrada y salida en Linux
+
+### Actividad 1: Listar dispositivos conectados
+
+### Instrucciones
+
+#### 1.-Abra una terminal en su entorno Linux.
+
+![Captura de pantalla](imagenes/ss15.png)
+
+#### 2.-Ejecute los siguientes comandos y anote sus observaciones:
+
+`lsblk`: Enumera los dispositivos de bloque.
+
+![Captura de pantalla](imagenes/ss16.png)
+
+`lsusb`: Lista los dispositivos conectados a los puertos USB.
+
+![Captura de pantalla](imagenes/ss17.png)
+
+`lspci`: Muestra los dispositivos conectados al bus PCI.
+
+![Captura de pantalla](imagenes/ss18.png)
+
+`dmesg | grep usb`: Muestra los mensajes del kernel relacionados con dispositivos USB.
+
+![Captura de pantalla](imagenes/ss19.png)
+
+
+#### 3.-Conteste:
+
+¿Qué tipos de dispositivos se muestran en la salida de `lsblk`?
+
+Dispositivos de almacenamiento
+
+¿Cuál es la diferencia entre `lsusb` y `lspci`?
+
+lsusb muestra dispositivos conectados por USB y lspci muestra dispositivos conectados por pci o pci express
+
+¿Qué información adicional proporciona `dmesg | grep usb`?
+
+Muestra los eventos relacionados con usb
+
+### Actividad 2: Verificar dispositivos de almacenamiento
+
+### Instrucciones
+
+Use el comando `fdisk -l` para listar todos los discos y particiones.
+
+![Captura de pantalla](imagenes/ss20.png)
+
+Utilice `blkid` para ver los identificadores UUID y los tipos de sistema de archivos.
+
+![Captura de pantalla](imagenes/ss21.png)
+
+Use `df -h` para listar los dispositivos montados y su espacio disponible.
+
+![Captura de pantalla](imagenes/ss22.png)
+
+### Conteste:
+
+¿Qué dispositivos de almacenamiento están conectados a su sistema?
+
+Loop , sda y sr0
+
+¿Qué particiones están montadas actualmente?
+
+sda2, loop 0-15
+
+¿Qué tipo de sistemas de archivos se usan en las particiones?
+
+En loop se usa squashfs y en sda ext4
+
+### Actividad 3: Explorar dispositivos de entrada
+
+### Instrucciones
+
+Ejecute `cat /proc/bus/input/devices` para listar los dispositivos de entrada.
+
+![Captura de pantalla](imagenes/ss23.png)
+
+Use `evtest` para monitorear eventos de dispositivos de entrada (requiere permisos de superusuario).
+
+![Captura de pantalla](imagenes/ss24.png)
+
+
+Investigue los siguientes dispositivos:
+
+<u>Teclado</u>
+
+ Un teclado es un dispositivo de entrada, en parte inspirado en el teclado de las máquinas de escribir, que utiliza un sistema de puntadas o márgenes, para que actúen como palancas mecánicas o interruptores electrónicos que envían toda la información a la computadora o al teléfono móvil.
+
+<u>Mouse</u> 
+
+El ratón o mouse es un dispositivo apuntador utilizado para facilitar el manejo de un entorno gráfico en una computadora.
+
+<u>Controladores USB adicionales</u>
+
+Los controladores USB adicionales son programas de software que se utilizan para admitir todas las funcionalidades de un dispositivo USB cuando el controlador de clase de Windows no lo hace
+
+### Conteste:
+
+¿Qué eventos genera cada dispositivo al interactuar con ellos?
+
+EV_KEY, EV_REL, EV_ABS, EV_MSC, EV_SW, EV_LED, EV_SYN
+
+¿Cómo se identifican los dispositivos en `/proc/bus/input/devices`?
+
+I: Bus=bus al que esta conectado  Vendor= fabricante  Product=id producto Version=version del producto
+
+N: Name= nombre del producto
+
+P: Phys= ubicacion fisica 
+
+S: Sysfs= ruta 
+
+H: Handlers= controladores
+
+B: EV= tipos de eventos que genera 
+
+B: KEY= mapa de bits
+
+B: REL=eventos relativos'''
+
+
+### Actividad 4: Examinar dispositivos de salida
+
+## Instrucciones
+
+Use `xrandr` para listar las pantallas conectadas y sus resoluciones.
+
+![Captura de pantalla](imagenes/ss25.png)
+
+Ejecute `aplay -l` para listar las tarjetas de sonido disponibles.
+
+![Captura de pantalla](imagenes/ss26.png)
+
+Use `lsof /dev/snd/*` para ver qué procesos están utilizando la tarjeta de sonido.
+
+![Captura de pantalla](imagenes/ss27.png)
+
+### Conteste:
+
+¿Qué salidas de video están disponibles en su sistema?
+
+virtual -1 
+
+¿Qué dispositivos de sonido se detectaron?
+
+Tarjeta 0: Intel 82801AA-ICH
+
+¿Qué procesos están usando la tarjeta de sonido?
+
+pipewire  y wireplumber 
+
+### Actividad 5: Crear un script de resumen
+
+### Instrucciones
+
+Cree un archivo llamado `dispositivos.sh` y agregue el siguiente contenido: ```bash #!/bin/bash echo "Dispositivos de bloque:" lsblk echo "Dispositivos USB:" lsusb echo "Dispositivos PCI:" lspci echo "Dispositivos de entrada:" cat /proc/bus/input/devices echo "Salidas de video:" xrandr echo "Tarjetas de sonido:" aplay -l ```
+
+![Captura de pantalla](imagenes/ss28.png)
+
+
+Ejecute el script usando `bash dispositivos.sh`.
+
+![Captura de pantalla](imagenes/ss32.png)
+
+
+Modifique el script para guardar la salida en un archivo llamado `resumendispositivos.txt`.
+
+```sh
+#!/bin/bash
+
+output_file="resumendispositivos.txt"
+
+{
+  echo "Dispositivos de bloque:"
+  lsblk
+  echo
+
+  echo "Dispositivos USB:"
+  lsusb
+  echo
+
+  echo "Dispositivos PCI:"
+  lspci
+  echo
+
+  echo "Dispositivos de entrada:"
+  cat /proc/bus/input/devices
+  echo
+
+  echo "Salidas de video:"
+  xrandr
+  echo
+
+  echo "Tarjetas de sonido:"
+  aplay -l
+} > "$output_file"
+
+echo "El resumen de los dispositivos se ha guardado en $output_file"
+```
+![Captura de pantalla](imagenes/ss32.png)
+
+
+### Conteste:
+¿Qué ventajas tiene usar un script para recopilar esta información?
+
+Se puede reutilizar para futuras ejecuciones y poder guardar de forma permanente los resultados.
+
+¿Qué cambios realizaría para personalizar el script?
+
+Agregaria un echo para ver los discos y comentarios para facilitar la lectura del archivo
+
+### Actividad 6: Reflexión y discusión
+
+### Instrucciones
+
+Reflexione sobre lo aprendido y discuta en equipo:
+
+¿Qué comando encontró más útil y por qué?
+
+Para mi el comando mas util de los vistos es evtest ya que el poder ver los eventos que realizan los dispositvos puede ser utilil para llevar la contabilidad de las acciones que se realizan en el sistema y asi poder detectar un fallo.
+
+¿Qué tan importante es conocer los dispositivos conectados al sistema?
+
+Mucho, ya que nos ayuda a podernos dar cuenta si tenemos algun dispositivo no deseado conectado a nuestro sistema, o en caso de tener algun fallo saber si es por software o hardware 
+
+¿Cómo podrían estos conocimientos aplicarse en la administración de sistemas?
+
+Se podrian aplicar en la administracion de los dispositivos, que es una parte fundamental de los sistemas, para brindar seguridad asegurandose de que no haya un dispositivo no deseado y con el registro de eventos nos podemos dar cuenta si algun dispositivo fallo ya sea por hardware o por un controlador 
+
+=======
+>>>>>>> 0d6eb00c5d705307ed33ba05667cf6d8b351f975
