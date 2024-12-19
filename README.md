@@ -1602,7 +1602,233 @@ echo "Prueba de escritura" > /mnt/nueva_particion/test.txt`
 
 ![Captura de pantalla](imagenes/ss60.png)
 
-      
-      
+## Actividad Final
 
-       
+### Sistemas de Archivos
+
+ ### Ejercicio 1: Concepto y noción de archivo real y virtual
+ ### Descripción:
+
+ Define los conceptos de archivo real y archivo virtual y explica sus diferencias.
+ Identifica ejemplos prácticos de cada tipo en sistemas operativos actuales.
+
+ ## Tareas:
+
+ • Define el concepto de archivo real y archivo virtual.
+
+<u>Archivo virtual</u>
+
+Es un archivo de uso temporal que es utilizado por los procesos del sistema mientras se están ejecutando dichos procesos.
+
+
+Estos archivos se crean durante la ejecución de un sistema y los utiliza para el almacenamiento de información, intercambio y organización mientras se ejecuta el sistema, su tamaño es muy variable y terminan al detener la ejecución del sistema, muchos de ellos son borrados, por ejemplo, los archivos *.tmp.
+
+<u>Archivo real</u>
+
+Es un objeto que contiene programas, datos o cualquier otro elemento. 
+
+Un archivo se muestra de manera real, en la información del espacio que ocupa en un disco duro o sistema de almacenamiento, en otras palabras, su tamaño es en bytes.
+
+ • Proporciona ejemplos de cómo los sistemas operativos manejan archivos
+ reales y virtuales.
+
+ • Explica un caso práctico donde un archivo virtual sea más útil que un
+ archivo real.
+
+ ### Ejercicio 2: Componentes de un sistema de archivos
+
+ ### Descripción:
+
+ Investiga los componentes principales de un sistema de archivos y compáralos entre dos sistemas operativos, como Linux y Windows.
+
+ ### Tareas:
+
+ • Identifica los componentes clave de un sistema de archivos (por ejem
+plo, metadatos, tablas de asignación, etc.).
+
+ • Crea un cuadro comparativo de cómo estos componentes funcionan en
+ sistemas como EXT4 y NTFS.
+
+ • Describe las ventajas y desventajas de cada sistema basado en sus
+ componentes.
+
+ ### Ejercicio 3: Organización lógica y física de archivos
+
+ ### Descripción:
+
+ Crea un esquema que muestre la organización lógica y física de un sistema
+ de archivos. Explica cómo se relacionan las estructuras lógicas con las físicas en el disco.
+
+### Tareas:
+
+ • Diseña un árbol jerárquico que represente la organización lógica de
+ directorios y subdirectorios.
+
+ • Explica cómo se traduce la dirección lógica a la dirección física en el
+ disco.
+
+ • Proporciona un ejemplo práctico de cómo un archivo se almacena físi
+camente.
+
+### Ejercicio 4: Mecanismos de acceso a los archivos
+
+### Descripción:
+ Simula diferentes mecanismos de acceso a archivos (secuencial, directo e
+ indexado) en un entorno práctico.
+
+### Tareas:
+
+ 1. Define los diferentes mecanismos de acceso.
+
+ 2. Escribe un pseudocódigo que muestre cómo acceder a:
+
+    • Un archivo secuencialmente.
+
+    • Un archivo directamente mediante su posición.
+
+    • Un archivo utilizando un índice.
+
+ 3. Compara las ventajas de cada mecanismo dependiendo del caso de uso.
+
+ ### Ejercicio 5: Modelo jerárquico y mecanismos de recuperación en caso de falla
+
+### Descripción:
+
+ Diseña una estructura jerárquica para un sistema de archivos y simula un
+ escenario de falla en el sistema. Describe cómo recuperar los datos utilizando mecanismos de recuperación.
+
+ ### Tareas:
+
+ • Diseña un modelo jerárquico para un sistema de archivos con al menos
+ tres niveles de directorios.
+
+ • Simula una falla en un directorio específico y describe los pasos nece
+sarios para recuperarlo.
+
+ • Explica qué herramientas o técnicas de respaldo (backup) utilizarías
+ para evitar pérdida de datos.
+
+ ### Protección y Seguridad
+
+ ### Ejercicio 1: Concepto y objetivos de protección y seguridad
+
+### Descripción:
+
+ Investiga los conceptos de protección y seguridad en sistemas operativos.
+
+ Analiza los objetivos principales que deben cumplir estos mecanismos.
+
+### Tareas:
+
+ • Define los conceptos de protección y seguridad en el contexto de sis
+temas operativos.
+
+ • Identifica los objetivos principales de un sistema de protección y se
+guridad, como confidencialidad, integridad y disponibilidad.
+
+ • Da un ejemplo práctico de cómo se aplican estos objetivos en un sistema
+ operativo.
+
+### Ejercicio 2: Clasificación aplicada a la seguridad
+
+ ### Descripción:
+
+ Clasifica los mecanismos de seguridad en un sistema operativo y explica cómo cada tipo contribuye a la protección del sistema.
+
+ ### Tareas:
+
+ • Investiga las clasificaciones comunes de la seguridad, como física, lógica y de red.
+
+ • Explica el papel de cada clasificación en la protección de un sistema
+ operativo.
+
+ • Proporciona ejemplos prácticos de herramientas o técnicas utilizadas
+ en cada clasificación.
+
+### Ejercicio 3: Funciones del sistema de protección
+
+### Descripción:
+
+ Analiza las funciones que cumple un sistema de protección en un entorno
+ multiusuario.
+
+### Tareas:
+
+ • Describe cómo un sistema de protección controla el acceso a los recur
+sos.
+
+ • Explica las funciones principales como autenticación, autorización y
+ auditoría.
+
+ • Diseña un caso práctico donde se muestren las funciones de un sistema
+ de protección en acción.
+
+### Ejercicio 4: Implantación de matrices de acceso
+
+### Descripción:
+
+ Crea e implementa una matriz de acceso para un sistema que contiene usuar
+ios y recursos con diferentes niveles de permisos.
+
+### Tareas:
+
+ • Diseña una matriz de acceso para un sistema con al menos 3 usuarios
+ y 4 recursos.
+
+ • Explica cómo esta matriz se utiliza para controlar el acceso en un
+ sistema operativo.
+
+ • Simula un escenario donde un usuario intenta acceder a un recurso no
+ permitido y cómo la matriz lo bloquea.
+
+ ### Ejercicio 5: Protección basada en el lenguaje
+
+### Descripción:
+
+ Investiga cómo los lenguajes de programación pueden implementar mecan
+ismos de protección.
+
+### Tareas:
+
+ • Explica el concepto de protección basada en el lenguaje.
+
+ • Proporciona un ejemplo de cómo un lenguaje como Java o Rust asegura
+ la memoria y evita accesos no autorizados.
+
+ • Compara este enfoque con otros mecanismos de protección en sistemas
+ operativos.
+
+ ### Ejercicio 6: Validación y amenazas al sistema
+
+### Descripción:
+
+ Analiza las principales amenazas a un sistema operativo y los mecanismos
+ de validación utilizados para prevenirlas.
+
+ ### Tareas:
+
+ • Investiga y describe al menos tres tipos de amenazas comunes (por
+ ejemplo, malware, ataques de fuerza bruta, inyección de código).
+
+ • Explica los mecanismos de validación como autenticación multifactor
+ y control de integridad.
+
+ • Diseña un esquema de validación para un sistema operativo con múlti
+ples usuarios.
+
+### Ejercicio 7: Cifrado
+
+### Descripción:
+
+ Explora cómo los mecanismos de cifrado protegen la información en un sis
+tema operativo.
+
+### Tareas:
+
+ • Define los conceptos de cifrado simétrico y asimétrico.
+
+ • Proporciona un ejemplo práctico de cada tipo de cifrado aplicado en
+ sistemas operativos.
+ 
+ • Simula el proceso de cifrado y descifrado de un archivo con una clave
+ dada.
